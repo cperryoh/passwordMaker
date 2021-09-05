@@ -20,7 +20,7 @@ import java.awt.event.KeyEvent;
 
 public class maker {
 
-	private JFrame frame;
+	private JFrame frmPasswordMaker;
 	private JTextField passOut;
 	private JTextField lengthIn;
 	ArrayList<CharType> types;
@@ -33,7 +33,7 @@ public class maker {
 			public void run() {
 				try {
 					maker window = new maker();
-					window.frame.setVisible(true);
+					window.frmPasswordMaker.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -61,15 +61,16 @@ public class maker {
 	 */
 	private void initialize() {
 		types = new ArrayList<CharType>();
-		frame = new JFrame();
-		frame.setBounds(100, 100, 340, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmPasswordMaker = new JFrame();
+		frmPasswordMaker.setTitle("Password maker");
+		frmPasswordMaker.setBounds(100, 100, 340, 300);
+		frmPasswordMaker.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmPasswordMaker.getContentPane().setLayout(null);
 		
 		passOut = new JTextField();
 		passOut.setEditable(false);
 		passOut.setBounds(10, 230, 181, 20);
-		frame.getContentPane().add(passOut);
+		frmPasswordMaker.getContentPane().add(passOut);
 		passOut.setColumns(10);
 		
 		JButton copyBtn = new JButton("Copy");
@@ -81,7 +82,7 @@ public class maker {
 			}
 		});
 		copyBtn.setBounds(198, 225, 118, 23);
-		frame.getContentPane().add(copyBtn);
+		frmPasswordMaker.getContentPane().add(copyBtn);
 		
 		JCheckBox symbolsChc = new JCheckBox("Symbols");
 		symbolsChc.addActionListener(new ActionListener() {
@@ -94,7 +95,7 @@ public class maker {
 			}
 		});
 		symbolsChc.setBounds(24, 81, 97, 23);
-		frame.getContentPane().add(symbolsChc);
+		frmPasswordMaker.getContentPane().add(symbolsChc);
 		
 		JCheckBox numbersChc = new JCheckBox("Numbers");
 		numbersChc.addActionListener(new ActionListener() {
@@ -107,7 +108,7 @@ public class maker {
 			}
 		});
 		numbersChc.setBounds(24, 107, 97, 23);
-		frame.getContentPane().add(numbersChc);
+		frmPasswordMaker.getContentPane().add(numbersChc);
 		
 		JCheckBox uppercaseChc = new JCheckBox("uppercase");
 		uppercaseChc.addActionListener(new ActionListener() {
@@ -120,7 +121,7 @@ public class maker {
 			}
 		});
 		uppercaseChc.setBounds(24, 133, 97, 23);
-		frame.getContentPane().add(uppercaseChc);
+		frmPasswordMaker.getContentPane().add(uppercaseChc);
 		
 		JCheckBox lowercaseChc = new JCheckBox("lowercase");
 		lowercaseChc.addActionListener(new ActionListener() {
@@ -133,7 +134,7 @@ public class maker {
 			}
 		});
 		lowercaseChc.setBounds(24, 158, 97, 23);
-		frame.getContentPane().add(lowercaseChc);
+		frmPasswordMaker.getContentPane().add(lowercaseChc);
 		
 		JButton genBtn = new JButton("Generate");
 		genBtn.addActionListener(new ActionListener() {
@@ -144,11 +145,11 @@ public class maker {
 			}
 		});
 		genBtn.setBounds(24, 188, 89, 23);
-		frame.getContentPane().add(genBtn);
+		frmPasswordMaker.getContentPane().add(genBtn);
 		
 		Label label = new Label("Length:");
 		label.setBounds(21, 52, 40, 22);
-		frame.getContentPane().add(label);
+		frmPasswordMaker.getContentPane().add(label);
 		
 		lengthIn = new JTextField();
 		lengthIn.addKeyListener(new KeyAdapter() {
@@ -161,7 +162,7 @@ public class maker {
 			}
 		});
 		lengthIn.setBounds(67, 54, 86, 20);
-		frame.getContentPane().add(lengthIn);
+		frmPasswordMaker.getContentPane().add(lengthIn);
 		lengthIn.setColumns(10);
 	}
 }
